@@ -1,0 +1,21 @@
+
+module com {
+    module rti {
+        module examples {
+            module JavaDDSFileTransfer {
+        
+                const long FILE_FRAGMENT_SIZE_MAX = 63*1024;
+                const long FILE_NAME_LENGTH_MAX = 4096;
+                
+                struct FileFragment {
+                    string<FILE_NAME_LENGTH_MAX> file_name;
+                    long file_size;
+                    long frag_num;
+                    long frag_total;
+                    sequence<octet, FILE_FRAGMENT_SIZE_MAX> frag;
+                };
+            };
+        };
+    };
+ };
+
